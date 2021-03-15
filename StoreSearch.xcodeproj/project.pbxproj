@@ -17,6 +17,7 @@
 		0B27348825FB6A1000E8166D /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B27348725FB6A1000E8166D /* SearchResultCell.xib */; };
 		0B27348B25FB730300E8166D /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B27348A25FB730300E8166D /* SearchResultCell.swift */; };
 		0B27348E25FB774A00E8166D /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B27348D25FB774A00E8166D /* NothingFoundCell.xib */; };
+		0B27349725FFBFD800E8166D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B27349625FFBFD800E8166D /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0B27348725FB6A1000E8166D /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0B27348A25FB730300E8166D /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		0B27348D25FB774A00E8166D /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		0B27349625FFBFD800E8166D /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				0B27348A25FB730300E8166D /* SearchResultCell.swift */,
 				0B27348725FB6A1000E8166D /* SearchResultCell.xib */,
 				0B27348D25FB774A00E8166D /* NothingFoundCell.xib */,
+				0B27349625FFBFD800E8166D /* LoadingCell.xib */,
 				0B27348425FB413C00E8166D /* SearchResult.swift */,
 				0B27347425FB326D00E8166D /* Main.storyboard */,
 				0B27347725FB326E00E8166D /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			files = (
 				0B27347B25FB326E00E8166D /* LaunchScreen.storyboard in Resources */,
 				0B27347825FB326E00E8166D /* Assets.xcassets in Resources */,
+				0B27349725FFBFD800E8166D /* LoadingCell.xib in Resources */,
 				0B27348825FB6A1000E8166D /* SearchResultCell.xib in Resources */,
 				0B27348E25FB774A00E8166D /* NothingFoundCell.xib in Resources */,
 				0B27347625FB326D00E8166D /* Main.storyboard in Resources */,
