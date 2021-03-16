@@ -225,7 +225,7 @@ extension SearchViewController: UISearchBarDelegate {
             dataTask = session.dataTask(with: url, completionHandler: {
                 data, response, error in
                 print("On main thread? " + (Thread.current.isMainThread ? "Yes" : "No"))
-                if let error = error as? NSError, error.code == -999 {
+                if let error = error as NSError?, error.code == -999 {
                     return
                 } else if let httpResponse = response as? HTTPURLResponse,
                           httpResponse.statusCode == 200{
@@ -281,29 +281,8 @@ extension SearchViewController: UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
-            cell.nameLabel.text = searchResult.name
-            if searchResult.artistName.isEmpty {
-                cell.artistNameLabel.text = "Unknown"
-            } else {
-                cell.artistNameLabel.text = String(format: "%@ (%@)",searchResult.artistName, kindForDisplay(searchResult.kind))
-            }
+            cell.configure(for: searchResult)
             return cell
-        }
-    }
-    
-    func kindForDisplay(_ kind: String) -> String {
-        switch kind {
-        case "album": return "Album"
-        case "audiobook": return "Audio Book"
-        case "book": return "Book"
-        case "ebook": return "E-Book"
-        case "feature-movie": return "Movie"
-        case "music-video": return "Music Video"
-        case "podcast": return "Podcast"
-        case "software": return "App"
-        case "song": return "Song"
-        case "tv-episode": return "TV Episode"
-        default: return kind
         }
     }
 }
