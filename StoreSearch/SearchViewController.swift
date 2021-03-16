@@ -16,6 +16,8 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     
     
     struct TableViewCellIdentifiers {
@@ -43,9 +45,22 @@ class SearchViewController: UIViewController {
                             TableViewCellIdentifiers.loadingCell)
     }
     
-    func iTunesURL(searchText: String) -> URL {
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        performSearch()
+    }
+    
+    func iTunesURL(searchText: String, category: Int) -> URL {
+        let entityName: String
+        
+        switch category {
+            case 1: entityName = "musicTrack"
+            case 2: entityName = "software"
+            case 3: entityName = "ebook"
+            default: entityName = ""
+        }
+        
         let escapedSearchText = searchText.addingPercentEncoding( withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200", escapedSearchText)
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200&entity=%@", escapedSearchText, entityName)
         let url = URL(string: urlString)
         return url!
     }
@@ -189,6 +204,10 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performSearch()
+    }
+    
+    func performSearch() {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
@@ -200,7 +219,8 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = []
             
-            let url = iTunesURL(searchText: searchBar.text!)
+            let url = self.iTunesURL(searchText: searchBar.text!,
+                                     category: segmentedControl.selectedSegmentIndex)
             let session = URLSession.shared
             dataTask = session.dataTask(with: url, completionHandler: {
                 data, response, error in

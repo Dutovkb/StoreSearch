@@ -17,15 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-U3-UgY">
-                                <rect key="frame" x="0.0" y="56" width="320" height="512"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PU3-1N-7aP"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tAF-VV-h9H"/>
-                                </connections>
-                            </tableView>
-                            <searchBar contentMode="redraw" placeholder="Please, enter app name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="8bg-IH-9Bb">
+                            <searchBar contentMode="redraw" placeholder="Введите имя артиста, название приложения и т.д." translatesAutoresizingMaskIntoConstraints="NO" id="8bg-IH-9Bb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -33,22 +25,45 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="urt-MI-3YD"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Un0-U3-UgY">
+                                <rect key="frame" x="0.0" y="87" width="320" height="481"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PU3-1N-7aP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tAF-VV-h9H"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9KH-Sy-RLp">
+                                <rect key="frame" x="-6" y="56" width="332" height="32"/>
+                                <segments>
+                                    <segment title="Все"/>
+                                    <segment title="Музыка"/>
+                                    <segment title="Софт"/>
+                                    <segment title="Книги"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="YGx-Pq-4zo"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Un0-U3-UgY" secondAttribute="trailing" id="2yk-pM-sCQ"/>
-                            <constraint firstItem="Un0-U3-UgY" firstAttribute="top" secondItem="8bg-IH-9Bb" secondAttribute="bottom" id="8CG-J2-Mgq"/>
-                            <constraint firstItem="Un0-U3-UgY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AbU-yQ-uNf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Un0-U3-UgY" secondAttribute="bottom" id="QWS-fS-iTX"/>
-                            <constraint firstItem="Un0-U3-UgY" firstAttribute="top" secondItem="8bg-IH-9Bb" secondAttribute="bottom" id="SHR-NZ-lYs"/>
-                            <constraint firstItem="8bg-IH-9Bb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dq3-Ad-FYf"/>
-                            <constraint firstItem="8bg-IH-9Bb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hIU-lo-7tt"/>
-                            <constraint firstItem="8bg-IH-9Bb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i2M-Wp-P4G"/>
+                            <constraint firstItem="Un0-U3-UgY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2bp-pG-wgC"/>
+                            <constraint firstItem="8bg-IH-9Bb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2dU-qj-dzr"/>
+                            <constraint firstItem="9KH-Sy-RLp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-6" id="DJY-N7-NOn"/>
+                            <constraint firstItem="Un0-U3-UgY" firstAttribute="top" secondItem="9KH-Sy-RLp" secondAttribute="bottom" id="GBy-ks-qiF"/>
+                            <constraint firstAttribute="trailing" secondItem="9KH-Sy-RLp" secondAttribute="trailing" constant="-6" id="Lmg-1L-Tu6"/>
+                            <constraint firstItem="8bg-IH-9Bb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XmR-9o-72e"/>
+                            <constraint firstItem="9KH-Sy-RLp" firstAttribute="top" secondItem="8bg-IH-9Bb" secondAttribute="bottom" id="cdU-To-XxW"/>
+                            <constraint firstItem="8bg-IH-9Bb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h94-L9-Y0d"/>
+                            <constraint firstItem="Un0-U3-UgY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zlO-QE-gh3"/>
+                            <constraint firstItem="Un0-U3-UgY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zqN-wy-sTz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="8bg-IH-9Bb" id="UR4-DG-i8X"/>
+                        <outlet property="segmentedControl" destination="9KH-Sy-RLp" id="zFL-ld-Li0"/>
                         <outlet property="tableView" destination="Un0-U3-UgY" id="qbT-bZ-4L1"/>
                     </connections>
                 </viewController>
