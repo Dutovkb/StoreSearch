@@ -65,14 +65,126 @@
                         <outlet property="searchBar" destination="8bg-IH-9Bb" id="UR4-DG-i8X"/>
                         <outlet property="segmentedControl" destination="9KH-Sy-RLp" id="zFL-ld-Li0"/>
                         <outlet property="tableView" destination="Un0-U3-UgY" id="qbT-bZ-4L1"/>
+                        <segue destination="Mvy-T7-F0G" kind="presentation" identifier="ShowDetail" id="abF-xz-INg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.625" y="92.957746478873247"/>
+            <point key="canvasLocation" x="92" y="93"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="pJ6-p3-ii5">
+            <objects>
+                <viewController id="Mvy-T7-F0G" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qsC-zk-Guf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByL-3I-DP7" userLabel="Pop-up View">
+                                <rect key="frame" x="40" y="154" width="240" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AZg-Kl-e2P">
+                                        <rect key="frame" x="10" y="115" width="220" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Имя артиста" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9W-Lv-kns">
+                                        <rect key="frame" x="10" y="142" width="220" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Тип:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y52-dY-Oa9">
+                                        <rect key="frame" x="10" y="165" width="43" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-on-Ymo">
+                                        <rect key="frame" x="70" y="188" width="160" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Жанр:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vac-aN-2wK">
+                                        <rect key="frame" x="10" y="188" width="50" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-yr-iyC">
+                                        <rect key="frame" x="70" y="165" width="160" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKM-58-DDu">
+                                        <rect key="frame" x="168" y="210" width="66" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="euJ-U2-h3j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                        <state key="normal" title="$9.99" backgroundImage="PriceButton"/>
+                                        <connections>
+                                            <action selector="openInStore" destination="Mvy-T7-F0G" eventType="touchUpInside" id="taC-ps-opg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-vo-ddd">
+                                        <rect key="frame" x="4" y="3" width="15" height="18"/>
+                                        <state key="normal" image="CloseButton"/>
+                                        <connections>
+                                            <action selector="close" destination="Mvy-T7-F0G" eventType="touchUpInside" id="oIK-nO-ptJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Pg4-vo-ddd" firstAttribute="top" secondItem="ByL-3I-DP7" secondAttribute="top" constant="3" id="6dL-PB-Roc"/>
+                                    <constraint firstAttribute="trailing" secondItem="uKM-58-DDu" secondAttribute="trailing" constant="6" id="8zt-V7-Wf2"/>
+                                    <constraint firstAttribute="bottom" secondItem="uKM-58-DDu" secondAttribute="bottom" constant="6" id="Uhx-nG-SLa"/>
+                                    <constraint firstAttribute="width" constant="240" id="fks-nl-uPG"/>
+                                    <constraint firstAttribute="height" constant="240" id="gNP-lU-X1a"/>
+                                    <constraint firstItem="Pg4-vo-ddd" firstAttribute="leading" secondItem="ByL-3I-DP7" secondAttribute="leading" constant="4" id="pRM-4w-IHh"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L9P-Nj-r3e">
+                                <rect key="frame" x="110" y="168" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W0u-Vf-jZ7"/>
+                        <color key="backgroundColor" red="0.016609366983175278" green="0.013323464430868626" blue="0.0056983656249940395" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ByL-3I-DP7" firstAttribute="centerY" secondItem="qsC-zk-Guf" secondAttribute="centerY" id="0TK-Wm-Mom"/>
+                            <constraint firstItem="ByL-3I-DP7" firstAttribute="centerX" secondItem="qsC-zk-Guf" secondAttribute="centerX" id="gbq-BG-7XP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="artistNameLabel" destination="E9W-Lv-kns" id="tSa-gp-7kI"/>
+                        <outlet property="artworkImageView" destination="L9P-Nj-r3e" id="wDn-MV-hFy"/>
+                        <outlet property="genreLabel" destination="J9v-on-Ymo" id="DIk-DC-E2s"/>
+                        <outlet property="kindLabel" destination="Oz9-yr-iyC" id="PbI-py-YRz"/>
+                        <outlet property="nameLabel" destination="AZg-Kl-e2P" id="O1V-Ah-Lac"/>
+                        <outlet property="popupView" destination="ByL-3I-DP7" id="vJh-9j-YTR"/>
+                        <outlet property="priceButton" destination="uKM-58-DDu" id="8Rf-51-bhn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xol-HI-n6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="93"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CloseButton" width="15" height="15"/>
+        <image name="PriceButton" width="11" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

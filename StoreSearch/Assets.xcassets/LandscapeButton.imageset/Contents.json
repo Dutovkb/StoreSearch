@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Placeholder.png",
+      "filename" : "LandscapeButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Placeholder@2x.png",
+      "filename" : "LandscapeButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Placeholder@3x.png",
+      "filename" : "LandscapeButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

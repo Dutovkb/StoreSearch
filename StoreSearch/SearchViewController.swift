@@ -53,10 +53,10 @@ class SearchViewController: UIViewController {
         let entityName: String
         
         switch category {
-            case 1: entityName = "musicTrack"
-            case 2: entityName = "software"
-            case 3: entityName = "ebook"
-            default: entityName = ""
+        case 1: entityName = "musicTrack"
+        case 2: entityName = "software"
+        case 3: entityName = "ebook"
+        default: entityName = ""
         }
         
         let escapedSearchText = searchText.addingPercentEncoding( withAllowedCharacters: CharacterSet.urlQueryAllowed)!
@@ -181,6 +181,14 @@ class SearchViewController: UIViewController {
         return searchResult
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let detailViewController = segue.destination as! DetailViewController
+            let indexPath = sender as! IndexPath
+            let searchResult = searchResults[indexPath.row]
+            detailViewController.searchResult = searchResult
+        }
+    }
     
     // Обработка ошибки при подключении к серверу
     func showNetworkError() {
@@ -292,6 +300,7 @@ extension SearchViewController: UITableViewDelegate {
     //Снимает выделение строки с анимацеий
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "ShowDetail", sender: indexPath)
     }
     
     // Гарантирует, что можно выбирать строки только с реальными результатами поиска
