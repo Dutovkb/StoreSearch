@@ -56,4 +56,10 @@ class SearchResultCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+      super.prepareForReuse()
+      downloadTask?.cancel()
+      downloadTask = nil
+    }
+    
 }
