@@ -23,6 +23,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.clear
+        
         if searchResult != nil {
             updateUI()
         }
@@ -86,6 +88,16 @@ class DetailViewController: UIViewController {
     deinit {
       print("deinit \(self)")
       downloadTask?.cancel()
+    }
+}
+
+extension DetailViewController {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+      return BounceAnimationController()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController)  -> UIViewControllerAnimatedTransitioning? {
+        return SlideOutAnimationController()
     }
 }
 
